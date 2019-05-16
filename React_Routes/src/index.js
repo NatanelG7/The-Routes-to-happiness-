@@ -6,11 +6,19 @@ import Happy from './components/Happy';
 import Sleepy from './components/Sleepy';
 import Guilty from './components/Guilty';
 
-// your code goes here
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 class Home extends Component{
   render(){
     return(
-      // your code goes here
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Happy" component={Happy} />
+          <Route path="/Sleepy" component={Sleepy} />
+          <Route path="/Guilty" component={Guilty} />
+        </Switch>
+    </BrowserRouter>
     )
   }
 }
