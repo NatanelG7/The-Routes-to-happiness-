@@ -6,7 +6,7 @@ import Happy from './components/Happy';
 import Sleepy from './components/Sleepy';
 import Guilty from './components/Guilty';
 
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch  } from "react-router-dom";
 
 class Home extends Component{
   render(){
