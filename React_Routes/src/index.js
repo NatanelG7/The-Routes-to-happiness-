@@ -1,26 +1,37 @@
-import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import './CSS/index.css';
+import Guilty from './components/Guilty'
+import Happy from './components/Happy'
+import Sleepy from './components/Sleepy'
 
-import Happy from './components/Happy';
-import Sleepy from './components/Sleepy';
-import Guilty from './components/Guilty';
+const Home = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/guilty">Guilty</Link>
+        </li>
+        <li>
+          <Link to="/happy">Happy</Link>
+        </li>
+        <li>
+          <Link to="/sleepy">Sleepy</Link>
+        </li>
+      </ul>
 
-import { BrowserRouter, Route, Switch  } from "react-router-dom";
+      <hr />
 
-class Home extends Component{
-  render(){
-    return(
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Happy" component={Happy} />
-          <Route path="/Sleepy" component={Sleepy} />
-          <Route path="/Guilty" component={Guilty} />
-        </Switch>
-    </BrowserRouter>
-    )
-  }
-}
+      <Route exact path="/"/>
+      <Route path="/guilty" component={Guilty} />
+      <Route path="/happy" component={Happy} />
+      <Route path="/sleepy" component={Sleepy} />
+    </div>
+  </Router>
+);
 
-ReactDOM.render( <Home />, document.getElementById('root') );
+
+ReactDOM.render( <Home/>, document.getElementById('root') );
